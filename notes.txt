@@ -1,0 +1,7 @@
+GIPHY API KEY= UZuL5oKY0dnXBTLXsEDplDOcXprF7LQV
+
+EXAMPLE OF API REQUEST WEBSITE
+http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=YOUR_API_KEY&limit=5
+
+Lin to the GIPHY Developers page:
+https://developers.giphy.com/docs/
