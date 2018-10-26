@@ -44,14 +44,20 @@ function addButton () {
 function ajaxCall (searchParam) {
     //set the GIPHY base URL
     var baseUrl = 'https://api.giphy.com/v1/gifs/search?';
+
     //add my API Key to basseURL
     baseUrl = baseUrl + 'api_key='+ APIKey;
+
     //set the result limit
     var resultLimit='10';
+
     //add the result limit to baseUrl
     baseUrl = baseUrl + '&limit=' + resultLimit;
+
+    //set queryURL
     let queryURL = baseUrl + '&q=' + searchParam;
     //console.log(queryURL); //for debugging purposes
+    
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -69,6 +75,9 @@ function ajaxCall (searchParam) {
 
                 //get the rating for a given GIF
                 let rating = results[i].rating;
+
+                //manipulate the rating data to make it capitalized
+                rating = rating.toUpperCase();
 
                 //set up the rating textt to display
                 let p = $("<p class='ratingText'>").text("Rating: " + rating);
@@ -133,16 +142,10 @@ $(document).ready(function() {
     //intitial call
     buildButtons();
 
-    
-
     //submit new buttons call
     $( '#submit' ).on("click", function(event){
         addButton();
     });
 
     
-
-
-
-//alert('Script linked!');
 })//end of ready wrap function
