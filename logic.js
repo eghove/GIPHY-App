@@ -2,6 +2,8 @@
 //==================================================================
 let spaceObj = ['sun', 'moon', 'mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'neptune', 'uranus', 'pluto', 'asteroid', 'space shuttle','rocket', 'nasa', 'astronaut', 'cosmonaut', 'space station', 'satellite', 'stars', 'aliens'];
 
+//my giphy API key
+const APIKey='UZuL5oKY0dnXBTLXsEDplDOcXprF7LQV';
 
 //FUNCTIONS
 //=================================================================
@@ -27,7 +29,6 @@ function addButton () {
     //update the button row
     buildButtons();
     //ended up clearing the input using HTML, probably not ideal
-    
 }
 
 
@@ -38,10 +39,18 @@ $(document).ready(function() {
     //intitial call
     buildButtons();
 
+    //when one of the giphy buttons is clicked, this isn't working right
+    $( '.giphyButton').on("click", function() {
+        var searchParam = $(this).attr('data-name');
+        console.log(searchParam);
+    });
+
+    //submit new buttons call
     $( '#submit' ).on("click", function(event){
-        event.preventDefault();
         addButton();
     });
+
+
 
 //alert('Script linked!');
 })//end of ready wrap function
