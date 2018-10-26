@@ -16,6 +16,11 @@ function buildButtons() {
         button.text(spaceObj[i]);
         $('#buttonRow').append(button);
     }
+    //on click listener for the giphy button
+    $( '.giphyButton').on("click", function() {
+        var searchParam = $(this).attr('data-name');
+        console.log(searchParam);
+    });
 }
 
 //function that grabs the value in 'search bar', adds it to the spaceObj array
@@ -39,11 +44,7 @@ $(document).ready(function() {
     //intitial call
     buildButtons();
 
-    //when one of the giphy buttons is clicked, this isn't working right
-    $( '.giphyButton').on("click", function() {
-        var searchParam = $(this).attr('data-name');
-        console.log(searchParam);
-    });
+    
 
     //submit new buttons call
     $( '#submit' ).on("click", function(event){
