@@ -19,7 +19,8 @@ function buildButtons() {
     //on click listener for the giphy button
     $( '.giphyButton').on("click", function() {
         var searchParam = $(this).attr('data-name');
-        console.log(searchParam);
+        //console.log(searchParam); //debuggin purposes
+        ajaxCall(searchParam);
     });
 }
 
@@ -36,11 +37,67 @@ function addButton () {
     //ended up clearing the input using HTML, probably not ideal
 }
 
+//function that makes the ajax call
+function ajaxCall (searchParam) {
+    //set the GIPHY base URL
+    var baseUrl = 'https://api.giphy.com/v1/gifs/search?';
+    //add my API Key to basseURL
+    baseUrl = baseUrl + 'api_key='+ APIKey;
+    //set the result limit
+    var resultLimit='10';
+    //add the result limit to baseUrl
+    baseUrl = baseUrl + '&limit=' + resultLimit;
+    let queryURL = baseUrl + '&q=' + searchParam;
+    console.log(queryURL); //for debugging purposes
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+        .then(function(response) {
+            //clear out the previous items
+            $( '#gifDisplay').empty();
 
+            //put the data into a variable
+            var results = response.data;
+
+            //for loop to display the 10 GIFS
+            for (var i = 0; i < results.length; i++) {
+                let gifDiv = $("<div class='gifImage'>"); //set up gifImage blocks for styling
+
+                //get the rating for a given GIF
+                let rating = results[i].rating;
+
+                //set up the rating textt to display
+                let p = $("<p class='ratingText'>").text("Rating: " + rating);
+
+                //set up the actual gif image
+                let gifImage = $("<img>");
+
+                //set the initial link to the still image
+                gifImage.attr("src", results[i].images.fixed_height_still.url);
+
+                //set the data state to still
+                gifImage.attr("data-state", "still");
+
+                //save the url for the still image
+                gifImage.attr("data-still-src", results[i].images.fixed_height_still.url);
+
+                //save the url for the animate image
+                gifImage.attr("data-animate-src", results[i].images.fixed_height.url);
+
+                gifDiv.append(p);
+                gifDiv.append(gifImage);
+
+                $( "#gifDisplay" ).append(gifDiv);
+            }
+        });
+
+};
 //MAIN PROCESSES
 //=================================================================
 
 $(document).ready(function() {
+
     //intitial call
     buildButtons();
 
