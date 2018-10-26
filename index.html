@@ -15,9 +15,48 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!--Link to my javascrip logic-->
     <script src="logic.js"></script>
-
 </head>
 <body>
+    <div class="container">
+        <!--Where the js generated buttons will go-->
+        <div class="row">
+            <div class="col-md-12" id="buttonRow">
+                
+            </div>
+        </div>
+
+        <!--This is the subcontainer where the GIFS will live (panel 1) and the button add query bar (panel 2) -->
+        <div class="row" id="panels">
+            <div class="col-md-12">
+                <div class="container">
+                    <div class="row">
+                        <!--Panel 1, for the GIFS-->
+                        <div class="col-md-8" id="gifDisplay">
+                            GIFS WILL GO HERE
+                        </div>
+                        <!--Panel 2-->
+                        <div class="col-md-4" id="submitBar">
+                            
+                            <form>
+                                <div class="form-group" id="form">
+                                    <label for="spaceObject"><h5>Add a space object!</h5></label>
+                                    <input type="text" onfocus="this.value=''" class="form-control" id="spaceObject" value="i.e. comets">
+                                </div>
+                                <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+    </div>
     
 </body>
 </html>
