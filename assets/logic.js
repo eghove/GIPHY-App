@@ -2,7 +2,7 @@
 /* eslint-disable no-undef */
 // VARIABLES
 //= =================================================================
-var spaceObj = ['sun', 'moon', 'mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'neptune', 'uranus', 'pluto', 'asteroid', 'space shuttle','rocket', 'nasa', 'astronaut', 'cosmonaut', 'space station', 'satellite', 'stars', 'space cat', 'alien']
+var spaceObj = ['sun', 'moon', 'mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'neptune', 'uranus', 'pluto', 'asteroid', 'space shuttle', 'rocket', 'nasa', 'astronaut', 'cosmonaut', 'space station', 'satellite', 'stars', 'space cat', 'alien']
 
 // my giphy API key
 var APIKey = 'UZuL5oKY0dnXBTLXsEDplDOcXprF7LQV'
