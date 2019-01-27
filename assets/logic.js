@@ -1,9 +1,9 @@
 // VARIABLES
 //= =================================================================
-let spaceObj = ['sun', 'moon', 'mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'neptune', 'uranus', 'pluto', 'asteroid', 'space shuttle','rocket', 'nasa', 'astronaut', 'cosmonaut', 'space station', 'satellite', 'stars', 'space cat', 'alien']
+var spaceObj = ['sun', 'moon', 'mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'neptune', 'uranus', 'pluto', 'asteroid', 'space shuttle','rocket', 'nasa', 'astronaut', 'cosmonaut', 'space station', 'satellite', 'stars', 'space cat', 'alien']
 
 // my giphy API key
-const APIKey = 'UZuL5oKY0dnXBTLXsEDplDOcXprF7LQV'
+var APIKey = 'UZuL5oKY0dnXBTLXsEDplDOcXprF7LQV'
 
 // FUNCTIONS
 //= ================================================================
@@ -144,7 +144,7 @@ $(document).ready(function() {
 
     // submit new buttons call
     $( '#submit' ).on("click", function(event){
-        addButton();
+        addButton ();
     });
 
     
