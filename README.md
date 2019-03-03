@@ -11,3 +11,7 @@ Space GIPHY uses the following technologies:
 * Bootstrap, 
 * JavaScript, and
 * JQuery.
+
+## What Does Space GIPHY Look Like?
+
+![Space GIPHY Main Screen](https://eghove.github.io/img/portfolio/Space-GIPHY-App.PNG "Space GIPHY Main Screen")
